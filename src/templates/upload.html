@@ -1,0 +1,49 @@
+<!DOCTYPE html>  
+<html>  
+ <head>
+        <meta charset="utf-8">
+        <title>HANDWRITTEN TEXT RECOGNITION</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='heart-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles4.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+ <body>
+  <div id="div-container">
+   <div class="container">
+      <h2 class='container-heading'><span class="heading_font">HANDWRITTEN TEXT RECOGNITION</span></h2>
+    </div>
+   {% if msg %}
+   <h1>{{ msg }}</h1>
+   {% endif %}
+
+   <h1>Upload new File</h1>
+
+   <form method=post enctype=multipart/form-data>
+     <input type=file name=file>
+        <input type=submit value=Upload>
+   </form>
+   {% if img_src %}
+     <p class="aligncenter">
+     <img class="marginauto" src="{{ img_src }}" alt="centered image" width="500" height="150">
+     
+   {% endif %}
+
+   {%if pred%}
+
+   <p style="color:red;font-size:30px;"> Predicted Text: <br> <b style="color:black;font-size:20px;"> {{ pred }} </b></p>
+   
+   {% endif %}
+
+   
+      <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/Shobhit2526"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/shobhit-ram-chaurasiya-b71b13193/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description' style="color:black;font-size:30px;">Made by SHOBHIT,ABHISHEK,AYUSH.</p>
+      </div>
+   </div>   
+
+ </body>
+</html>  
